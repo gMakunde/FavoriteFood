@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title>I heart sabich</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<link rel="stylesheet" href="/static/sabich.css"/>
+<body>
+  
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" style="background-image: url({{image}});" id="home">
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text w3-hide-small headerTitle">{{title}}</span>
+    <span class="w3-text w3-hide-large w3-hide-medium smallHeadertitle"><b>Sabich</b></span>
+    <p><a href="#menu" class="w3-button w3-xxlarge w3-black">Learn more about Sabich</a></p>
+  </div>
+</header>
+
+<!-- Menu Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+  
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">SABICH DECLASSIFIED</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Ingredients');" id="myLink">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Ingredients</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Instructions');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Instructions</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'SabichCom');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Sabich Community</div>
+      </a>
+    </div>
+
+    <div id="Ingredients" class="w3-container menu w3-padding-32 w3-white">
+      {% for ingredient in ingredients_list %} 
+      <h1><b>{{ingredient['originalString']}}</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
+      <p class="w3-text-grey">Found in {{ingredient['aisle']}} aisle</p>
+      <hr>
+      {% endfor %} 
+    </div>
+
+    <div id="Instructions" class="w3-container menu w3-padding-32 w3-white">
+      {% for step in steps_list %} 
+      <h1><b>Step {{step['number']}}</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
+      <p class="w3-text-grey">Found in {{step['step']}} aisle</p>
+      <hr>
+      {% endfor %} 
+    </div>
+
+
+    <div id="SabichCom" class="w3-container menu w3-padding-32 w3-white">
+      {% for tweet_id in tweet_ids %} 
+      <blockquote class="twitter-tweet">
+      <a href="http://twitter.com/arilennox/status/{{ tweet_id }}" >loading...</a>
+      </blockquote>
+      <hr>
+      {% endfor %} 
+    </div><br>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+  <script src="/static/sabich.js" type="text/javascript"></script>
+  <p>Powered by The King of Calloway</p>
+</footer>
+
+
+</body>
+</html>
