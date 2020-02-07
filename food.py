@@ -22,6 +22,7 @@ def index():
         twit_token,
         twit_token_secret,
     )
+
     twit_json_body = requests.get(twit_url, auth=twit_oauth).json()
     twit_random = random.randint(0, len(twit_json_body["statuses"])-5)
     tweets = []
