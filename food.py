@@ -2,7 +2,6 @@ import flask
 import os
 import random
 import requests, requests_oauthlib
-import json
 import os
 import random
 
@@ -16,13 +15,18 @@ def index():
     twit_secret = os.getenv('twit_secret')
     twit_token = os.getenv('twit_token')
     twit_token_secret = os.getenv('twit_token_secret')
+    # twit_oauth = requests_oauthlib.OAuth1(
+    #     twit_key,
+    #     twit_secret,
+    #     twit_token,
+    #     twit_token_secret,
+    # )
     twit_oauth = requests_oauthlib.OAuth1(
-        twit_key,
-        twit_secret,
-        twit_token,
-        twit_token_secret,
+        "KJFYSqLhZ8rwQiXJsvkjN9GzF",
+        "J7G5iZndpRmiH5tzihuJxHQe0nDYpxvVhQ1W4v9OOpQrujurXn",
+        "519031926-OmiqDkHu7pIaLSZqRknbD5fp9uwFF9m4ah2ZPypC",
+        "HOcM2UpzwoVVlxTmD1tihORc9hWGcJatOW1cK1Z6GaVMv",
     )
-
     twit_json_body = requests.get(twit_url, auth=twit_oauth).json()
     twit_random = random.randint(0, len(twit_json_body["statuses"])-5)
     tweets = []
@@ -33,7 +37,8 @@ def index():
     falafel_query = "https://api.spoonacular.com/recipes/search?query=falafel"
     hummus_query = "https://api.spoonacular.com/recipes/search?query=hummus"
     spoonacular_url = "https://api.spoonacular.com/recipes/informationBulk?ids="
-    spoonacular_key = os.getenv('spoonKey')
+    #spoonacular_key = os.getenv('spoonKey')
+    spoonacular_key = "&apiKey=0df474a2434e4aefacf96e34ba4a7761"
     sabich_json = requests.get(sabich_query + spoonacular_key).json()
     falafel_json = requests.get(falafel_query + spoonacular_key).json()
     hummus_json = requests.get(hummus_query + spoonacular_key).json()
