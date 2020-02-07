@@ -29,6 +29,7 @@ def index():
     )
     twit_json_body = requests.get(twit_url, auth=twit_oauth).json()
     twit_random = random.randint(0, len(twit_json_body["statuses"])-5)
+    print(twit_json_body)
     tweets = []
     for i in range(5):
         tweets.append(twit_json_body["statuses"][twit_random+i]['id'])
