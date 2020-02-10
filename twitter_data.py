@@ -57,22 +57,12 @@ Returns
 json
 json body of twitter endpoint
 """
-        print("key:", self.key, "type:", type(self.key))
-        print("secret key: " + self.secret_key)
-        print("token: " + self.token)
-        print("token secret: " + self.secret_token)
         twit_oauth = requests_oauthlib.OAuth1(
             client_key=self.key,
             client_secret=self.secret_key,
             resource_owner_key=self.token,
             resource_owner_secret=self.secret_token,
         )
-        print("authentication:", twit_oauth)
-        rad= """Response
-        ========================================================================"""
-        print(rad)
-        print(requests.get(self.url, auth=twit_oauth).json())
-        return requests.get(self.url, auth=twit_oauth).json()
         
     def get_random_tweets(self, twit_json_body):
         """returns a list containing 5 random tweets from the twit_json_body
