@@ -1,5 +1,6 @@
 import requests, requests_oauthlib
 import random
+import os
 
 class TwitterData:
     """
@@ -57,10 +58,10 @@ json
 json body of twitter endpoint
 """
         twit_oauth = requests_oauthlib.OAuth1(
-            'WnxsFdh8YAd6Uwyl05dJYG00K',
-            'LyG4gizYyFvLEA9MmfU1GTZhDhehV7UKyjPRurpSG2rcpkhxK6',
-            '519031926-2uCD8bo4hucj2eMGw9Pyh3cFHPrbr5qwVrWxxM8Y',
-            '3gBSH62M5qv6usYP2Dq4az1n7jU4AB5cg8kYN0eWAMaaB',
+            self.key,
+            self.secret_key,
+            self.token,
+            self.secret_token,
         )
         print("key: " + self.key)
         print("secret key: " + self.secret_key)
