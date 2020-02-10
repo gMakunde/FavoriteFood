@@ -44,7 +44,7 @@ secret_token: str
 twitter-dev token secret
 """
         self.url = "https://api.twitter.com/1.1/search/tweets.json?q=falafel%20hummus&result_type=mixed"
-        self.key = os.getenv('twit_key') + "WAVE CHECK"
+        self.key = os.getenv('twit_key')
         self.secret_key = os.getenv('twit_secret')
         self.token = os.getenv('twit_token')
         self.secret_token = os.getenv('twit_token_secret')
