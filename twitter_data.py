@@ -4,45 +4,19 @@ import os
 
 class TwitterData:
     """
-A class used to get twitter json
-
-...
-
-Attributes
-----------
-url: str
-a string containing a twitter api endpoint
-key: str
-twitter-dev api key
-secret_key: str
-twitter-dev api secret key
-token: str
-twitter-dev access token
-secret_token: str
-twitter-dev token secret
-
-Methods
---------
-get_json()
-returns json body of the endpoint
-get_random_tweets(twit_json_body)
-returns a list containing 5 random tweets from the twit_json_body
-"""
+    A class used to get twitter json.
+    
+    Attributes:
+        url (str): A string containing a twitter api endpoint.
+        key (str): A twitter-dev api key.
+        secret_key (str): A twitter-dev api secret key.
+        token (str): A twitter-dev access token.
+        secret_token (str): A twitter-dev token secret.
+    """
     def __init__(self):
         """
-Parameters
-----------
-url: str
-a string containing a twitter api endpoint
-key: str
-twitter-dev api key
-secret_key: str
-twitter-dev api secret key
-token: str
-twitter-dev access token
-secret_token: str
-twitter-dev token secret
-"""
+        The constructor for the TwitterData class.
+        """
         self.url = "https://api.twitter.com/1.1/search/tweets.json?q=falafel%20hummus&result_type=mixed"
         self.key = os.getenv('twit_key')
         self.secret_key = os.getenv('twit_secret')
@@ -50,33 +24,29 @@ twitter-dev token secret
         self.secret_token = os.getenv('twit_token_secret')
     
     def get_json(self):
-        """returns json body of the endpoint
+        """
+        A method that returns the json body of the endpoint.
 
-Returns
---------
-json
-json body of twitter endpoint
-"""
+        Returns:
+            dict: The json body of the twitter endpoint.
+        """
         twit_oauth = requests_oauthlib.OAuth1(
-            client_key=self.key,
-            client_secret=self.secret_key,
-            resource_owner_key=self.token,
-            resource_owner_secret=self.secret_token,
+            self.key,
+            self.secret_key,
+            self.token,
+            self.secret_token,
         )
         
     def get_random_tweets(self, twit_json_body):
-        """returns a list containing 5 random tweets from the twit_json_body
+        """
+        A method that returns a list containing 5 random tweets from the twit_json_body.
 
-Parameters
-----------
-twit_json_body: json
-the json body from a twitter endpoint
-
-Returns
---------
-list
-list of 5 random tweet ids
-"""
+        Parameters:
+            twit_json_body (dict): The json body from a twitter endpoint.
+        
+        Returns:
+            list: A list that contains 5 random tweet ids from twit_json_body.
+        """
         twit_random = random.randint(0, len(twit_json_body["statuses"])-5)
         tweets = []
         for i in range(5):
