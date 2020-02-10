@@ -39,7 +39,8 @@ class TwitterData:
         
     def get_random_tweets(self, twit_json_body):
         """
-        A method that returns a list containing 5 random tweets from the twit_json_body.
+        A method that returns a list containing 5 random tweets from the 
+        twit_json_body.
 
         Parameters:
             twit_json_body (dict): The json body from a twitter endpoint.

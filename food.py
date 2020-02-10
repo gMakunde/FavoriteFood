@@ -8,6 +8,18 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def index():
+    """
+    A function that renders an HTML template that displays recipe information 
+    and quotes.
+    
+    This function dynamicly fetches quotes about israeli food using the twitter 
+    api and dynamicly fetches recipie directions and ingredients using the 
+    spoonacular api.
+    
+    Returns:
+        str: Result of evaluating israeli_food.html file.
+    """
+    
     twit = twitter_data.TwitterData()
     twit_json_body = twit.get_json()
     tweets = twit.get_random_tweets(twit_json_body)
@@ -23,7 +35,7 @@ def index():
 
 
     return flask.render_template(
-        "sabich.html",
+        "israeli_food.html",
         title = spoonacular_json_body[random_recipie]["title"],
         image = spoonacular_json_body[random_recipie]["image"],
         ingredients_list = spoonacular_json_body[random_recipie]["extendedIngredients"],
