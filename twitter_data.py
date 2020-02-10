@@ -57,6 +57,10 @@ Returns
 json
 json body of twitter endpoint
 """
+        print("key: " + self.key)
+        print("secret key: " + self.secret_key)
+        print("token: " + self.token)
+        print("token secret: " + self.secret_token)
         twit_oauth = requests_oauthlib.OAuth1(
             client_key=self.key,
             client_secret=self.secret_key,
@@ -64,10 +68,6 @@ json body of twitter endpoint
             resource_owner_secret=self.secret_token,
         )
         print("authentication:", twit_oauth)
-        print("key: " + self.key)
-        print("secret key: " + self.secret_key)
-        print("token: " + self.token)
-        print("token secret: " + self.secret_token)
         rad= """Response
         ========================================================================"""
         print(rad)
