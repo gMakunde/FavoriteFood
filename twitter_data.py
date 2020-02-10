@@ -63,10 +63,13 @@ json body of twitter endpoint
             self.secret_token,
         )
         print("key: " + self.key)
-        print("secret key: " + self.key)
-        print("token: " + self.key)
-        print("token secret: " + self.key)
-        print("response body: " + str(requests.get(self.url, auth=twit_oauth).json()))
+        print("secret key: " + self.secret_key)
+        print("token: " + self.token)
+        print("token secret: " + self.secret_token)
+        rad= """Response
+        ========================================================================"""
+        print(rad)
+        print(requests.get(self.url, auth=twit_oauth).json())
         return requests.get(self.url, auth=twit_oauth).json()
         
     def get_random_tweets(self, twit_json_body):
