@@ -8,23 +8,18 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def index():
-    
     twit_url = "https://api.twitter.com/1.1/search/tweets.json?q=falafel%20hummus&result_type=mixed"
-    twit = twitter_data.TwitterData(twit_url, "KJFYSqLhZ8rwQiXJsvkjN9GzF", "J7G5iZndpRmiH5tzihuJxHQe0nDYpxvVhQ1W4v9OOpQrujurXn", "519031926-OmiqDkHu7pIaLSZqRknbD5fp9uwFF9m4ah2ZPypC", "HOcM2UpzwoVVlxTmD1tihORc9hWGcJatOW1cK1Z6GaVMv")
-    # twit = twitter_api.TwitterData(twit_url, os.getenv('twit_key'), os.getenv('twit_secret'), os.getenv('twit_token')), os.getenv('twit_token_secret')
+    twit = twitter_data.TwitterData(twit_url, os.getenv('twit_key'), os.getenv('twit_secret'), os.getenv('twit_token'), os.getenv('twit_token_secret'))
     twit_json_body = twit.get_json()
     tweets = twit.get_random_tweets(twit_json_body)
     
-    spoon = recipie_data.RecipieData("&apiKey=0df474a2434e4aefacf96e34ba4a7761")
-    # spoon = spoonacular_api.RecipieData(spoonacular_url, os.getenv('spoonKey'))
+    spoon = recipie_data.RecipieData(os.getenv('spoonKey'))
     sabich_query = "https://api.spoonacular.com/recipes/search?query=sabich"
     falafel_query = "https://api.spoonacular.com/recipes/search?query=falafel"
     hummus_query = "https://api.spoonacular.com/recipes/search?query=hummus"
     queries = [sabich_query, falafel_query, hummus_query]
     spoon.group_queries(queries)
     spoonacular_json_body = spoon.get_json()
-    
-    
     random_recipie = random.randint(0, len(spoonacular_json_body)-1)
 
 
