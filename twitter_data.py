@@ -57,7 +57,7 @@ Returns
 json
 json body of twitter endpoint
 """
-        print("key: " + self.key)
+        print("key:", self.key, "type:", type(self.key))
         print("secret key: " + self.secret_key)
         print("token: " + self.token)
         print("token secret: " + self.secret_token)
