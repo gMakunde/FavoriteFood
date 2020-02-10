@@ -49,7 +49,13 @@ twitter-dev token secret
         self.secret_token = secret_token
     
     def get_json(self):
-        """returns json body of the endpoint"""
+        """returns json body of the endpoint
+
+Returns
+--------
+json
+json body of twitter endpoint
+"""
         twit_oauth = requests_oauthlib.OAuth1(
             self.key,
             self.secret_key,
@@ -65,6 +71,11 @@ Parameters
 ----------
 twit_json_body: json
 the json body from a twitter endpoint
+
+Returns
+--------
+list
+list of 5 random tweet ids
 """
         twit_random = random.randint(0, len(twit_json_body["statuses"])-5)
         tweets = []
