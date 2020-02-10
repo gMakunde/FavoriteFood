@@ -58,10 +58,10 @@ json
 json body of twitter endpoint
 """
         twit_oauth = requests_oauthlib.OAuth1(
-            self.key,
-            self.secret_key,
-            self.token,
-            self.secret_token,
+            client_key=self.key,
+            client_secret=self.secret_key,
+            resource_owner_key=self.token,
+            resource_owner_secret=self.secret_token,
         )
         print("authentication:", twit_oauth)
         print("key: " + self.key)
