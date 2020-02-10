@@ -8,12 +8,11 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def index():
-    twit_url = "https://api.twitter.com/1.1/search/tweets.json?q=falafel%20hummus&result_type=mixed"
-    twit = twitter_data.TwitterData(twit_url, os.getenv('twit_key'), os.getenv('twit_secret'), os.getenv('twit_token'), os.getenv('twit_token_secret'))
+    twit = twitter_data.TwitterData()
     twit_json_body = twit.get_json()
     tweets = twit.get_random_tweets(twit_json_body)
     
-    spoon = recipie_data.RecipieData(os.getenv('spoonKey'))
+    spoon = recipie_data.RecipieData()
     sabich_query = "https://api.spoonacular.com/recipes/search?query=sabich"
     falafel_query = "https://api.spoonacular.com/recipes/search?query=falafel"
     hummus_query = "https://api.spoonacular.com/recipes/search?query=hummus"

@@ -22,7 +22,7 @@ appends every result's id to the url
 get_json()
 returns json body of the endpoint
 """
-    def __init__(self, key):
+    def __init__(self):
         """
 Parameters
 ----------
@@ -33,7 +33,7 @@ key: str
 spoonacular api key
 """
         self.url = "https://api.spoonacular.com/recipes/informationBulk?ids="
-        self.key = key
+        self.key = os.getenv('spoonKey')
     
     def group_queries(self, url_list):
         """appends every result's id to the url.

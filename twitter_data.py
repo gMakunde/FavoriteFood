@@ -28,7 +28,7 @@ returns json body of the endpoint
 get_random_tweets(twit_json_body)
 returns a list containing 5 random tweets from the twit_json_body
 """
-    def __init__(self, url, key, secret_key, token, secret_token):
+    def __init__(self):
         """
 Parameters
 ----------
@@ -43,11 +43,11 @@ twitter-dev access token
 secret_token: str
 twitter-dev token secret
 """
-        self.url = url
-        self.key = key
-        self.secret_key = secret_key
-        self.token = token
-        self.secret_token = secret_token
+        self.url = "https://api.twitter.com/1.1/search/tweets.json?q=falafel%20hummus&result_type=mixed"
+        self.key = os.getenv('twit_key')
+        self.secret_key = os.getenv('twit_secret')
+        self.token = os.getenv('twit_token')
+        self.secret_token = os.getenv('twit_token_secret')
     
     def get_json(self):
         """returns json body of the endpoint
