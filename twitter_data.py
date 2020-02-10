@@ -37,6 +37,8 @@ class TwitterData:
             self.secret_token,
         )
         
+        return requests.get(self.url, auth=twit_oauth).json()
+        
     def get_random_tweets(self, twit_json_body):
         """
         A method that returns a list containing 5 random tweets from the 
