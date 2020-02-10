@@ -15,8 +15,7 @@ def index():
     twit_json_body = twit.get_json()
     tweets = twit.get_random_tweets(twit_json_body)
     
-    spoonacular_url = "https://api.spoonacular.com/recipes/informationBulk?ids="
-    spoon = recipie_data.RecipieData(spoonacular_url, "&apiKey=0df474a2434e4aefacf96e34ba4a7761")
+    spoon = recipie_data.RecipieData("&apiKey=0df474a2434e4aefacf96e34ba4a7761")
     # spoon = spoonacular_api.RecipieData(spoonacular_url, os.getenv('spoonKey'))
     sabich_query = "https://api.spoonacular.com/recipes/search?query=sabich"
     falafel_query = "https://api.spoonacular.com/recipes/search?query=falafel"
