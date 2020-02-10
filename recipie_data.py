@@ -26,7 +26,6 @@ class RecipieData:
         responses = []
         for urls in url_list:
             responses.append(requests.get(urls + self.key).json())
-            print(requests.get(urls + self.key).json())
             
         for response in responses:
             for i in range(len(response['results'])-1):
