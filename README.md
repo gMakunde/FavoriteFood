@@ -14,7 +14,10 @@ ids in the "Get Recipies Information Bulk" endpoint to get the information.
   solution: pip uninstalled the libraries and pip3 installed them
   
 3. config vars wouldnt authenticate me.<br />
-  solution: I removed the quotes from confid vars
+  solution: I removed the quotes from config vars
+
+4. Odd index out of range error where index 1 had an error but not any index above or before it.<br />
+  solution: I realized that the index was an outlier and the recipie had no steps or directions so I removed it.
 
 ## What are known problems, if any, with your project?
 not applicable
