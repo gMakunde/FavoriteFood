@@ -27,4 +27,4 @@ Add more pictures for the step by step directions.
 
 ### App Walkthough GIF
 
-<img src="http://g.recordit.co/vkVFh1kipZ.gif" width=250><br>
+<img src="http://g.recordit.co/8BkYm1Y38d.gif" width=250><br>
