@@ -20,7 +20,7 @@ ids in the "Get Recipies Information Bulk" endpoint to get the information.
   solution: I realized that the index was an outlier and the recipie had no steps or directions so I removed it.
 
 ## What are known problems, if any, with your project?
-not applicable
+Forgot to remove 12.50 price in html.
 
 ## What would you do to improve your project in the future?
 Add more pictures for the step by step directions.
