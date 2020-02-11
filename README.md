@@ -24,3 +24,7 @@ Forgot to remove 12.50 price in html.
 
 ## What would you do to improve your project in the future?
 Add more pictures for the step by step directions.
+
+### App Walkthough GIF
+
+<img src="http://g.recordit.co/vkVFh1kipZ.gif" width=250><br>
