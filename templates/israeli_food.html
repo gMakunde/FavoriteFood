@@ -36,7 +36,7 @@
 
     <div id="Ingredients" class="w3-container menu w3-padding-32 w3-white">
       {% for ingredient in ingredients_list %} 
-      <h1><b>{{ingredient['originalString']}}</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
+      <h1><b>{{ingredient['originalString']}}</b> </h1>
       <p class="w3-text-grey">Found in {{ingredient['aisle']}} aisle</p>
       <hr>
       {% endfor %} 
@@ -44,7 +44,7 @@
 
     <div id="Instructions" class="w3-container menu w3-padding-32 w3-white">
       {% for step in steps_list %} 
-      <h1><b>Step {{step['number']}}</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
+      <h1><b>Step {{step['number']}}</b> </h1>
       <p class="w3-text-grey">Found in {{step['step']}} aisle</p>
       <hr>
       {% endfor %} 
@@ -54,7 +54,7 @@
     <div id="SabichCom" class="w3-container menu w3-padding-32 w3-white">
       {% for tweet_id in tweet_ids %} 
       <blockquote class="twitter-tweet">
-      <a href="http://twitter.com/arilennox/status/{{ tweet_id }}" >loading...</a>
+      <a href="http://twitter.com/g_makunde/status/{{ tweet_id }}" >loading...</a>
       </blockquote>
       <hr>
       {% endfor %} 
